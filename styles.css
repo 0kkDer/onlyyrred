@@ -526,3 +526,42 @@ h2 span { color: var(--blue); }
 @media (prefers-reduced-motion: reduce) {
   .release-card, .release-dot { animation: none !important; }
 }
+
+:root {
+  color-scheme: dark;
+  --paper: #242927;
+  --ink: #f0f1eb;
+  --muted: #b0b6b0;
+  --line: #4b524e;
+  --coral: #ff755d;
+  --lime: #d6e879;
+  --blue: #8493ef;
+}
+
+body {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(#edf0e908 1px, transparent 1px),
+    linear-gradient(90deg, #edf0e908 1px, transparent 1px),
+    radial-gradient(#edf0e90a .5px, transparent .5px);
+  background-size: 28px 28px, 28px 28px, 6px 6px;
+}
+
+.topbar, .footer { border-color: var(--line); }
+.topbar-edition span { color: var(--ink); }
+.bio { color: #c8ccc6; }
+.signal-panel { background: #454c48; }
+.signal-heading .eyebrow, .signal-label, .signal-caption, .youtube-summary span { color: #d5d9d2; }
+.signal-heading .eyebrow-line { background: var(--lime); }
+.youtube-summary { border-left-color: #ffffff35; }
+.youtube-summary div + div { border-left-color: #ffffff35; }
+.latest-card { border-color: var(--line); background: #313734; color: var(--ink); }
+.latest-open { border-color: var(--line); color: var(--muted); }
+.release-card { border-color: #5a625d; background: #373e3a; color: var(--ink); }
+.release-kicker, .release-card-bottom time { color: #c2c8c2; }
+.release-card-bottom { border-color: #737a75; }
+.channel-list { border-color: var(--line); }
+.channel-row:hover { background: #303633; }
+.platform-logo { border-color: var(--line); background: #303633; }
+.footer { border-color: var(--line); }
+::selection { background: var(--lime); color: #202421; }
