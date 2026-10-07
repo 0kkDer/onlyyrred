@@ -134,7 +134,7 @@ function showLatestCard(platform, content) {
 
 async function refreshYoutubeStats() {
   try {
-    const response = await fetch('/api/youtube/stats', { cache: 'no-store' });
+    const response = await fetch('./youtube-stats.json', { cache: 'no-store' });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || 'YouTube stats are unavailable.');
 
@@ -148,16 +148,16 @@ async function refreshYoutubeStats() {
     document.querySelector('#youtube-subscriber-count').textContent = compactNumber(data.subscribers);
     document.querySelector('#youtube-total-views').textContent = compactNumber(data.views);
     document.querySelector('#youtube-video-count').textContent = compactNumber(data.videos);
-    document.querySelector('#signal-period').textContent = `LIVE · ${new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit' }).format(new Date(data.updatedAt))}`;
+    document.querySelector('#signal-period').textContent = `UPDATED · ${new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit' }).format(new Date(data.updatedAt))}`;
     document.querySelector('#signal-period').classList.add('is-live');
-    document.querySelector('#stats-state').textContent = 'YOUTUBE LIVE';
+    document.querySelector('#stats-state').textContent = 'YOUTUBE UPDATED';
     setCreatorAvatar(data.profileImage);
     showLatestCard('upload', data.latestUpload);
 
   } catch {
     document.querySelector('#stats-state').textContent = 'YOUTUBE OFFLINE';
     document.querySelector('#signal-period').classList.remove('is-live');
-    document.querySelector('#signal-period').textContent = 'API UNAVAILABLE';
+    document.querySelector('#signal-period').textContent = 'STATS UNAVAILABLE';
   }
 }
 
