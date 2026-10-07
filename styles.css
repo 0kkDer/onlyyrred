@@ -454,3 +454,75 @@ h2 span { color: var(--blue); }
     transform: none !important;
   }
 }
+
+.latest-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  align-items: stretch;
+  gap: 18px;
+}
+.latest-card {
+  min-height: 290px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+}
+.latest-thumb { height: 100%; aspect-ratio: auto; }
+.release-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 290px;
+  padding: 22px 24px;
+  overflow: hidden;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  animation: section-arrive .75s .12s both;
+}
+.release-card::after {
+  position: absolute;
+  right: -18px;
+  bottom: -115px;
+  color: #ffffff0a;
+  content: '05';
+  font-family: var(--display);
+  font-size: 300px;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+.release-card-top, .release-card-bottom { position: relative; z-index: 1; }
+.release-card-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.release-kicker, .release-status, .release-card-bottom time { font: 9px var(--mono); }
+.release-kicker { color: #c7cbc4; }
+.release-status { display: inline-flex; align-items: center; gap: 7px; color: var(--lime); }
+.release-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); animation: live-pulse 1.8s ease-out infinite; }
+.release-date { display: flex; align-items: baseline; gap: 12px; margin: 18px 0; color: var(--lime); }
+.release-day { font-family: var(--display); font-size: 88px; font-weight: 800; line-height: .85; }
+.release-month { font: 12px var(--mono); }
+.release-card-bottom { display: flex; align-items: end; justify-content: space-between; gap: 10px; padding-top: 16px; border-top: 1px solid #ffffff45; }
+.release-card-bottom h3 { margin: 0; font-family: var(--display); font-size: 23px; font-weight: 700; line-height: 1.05; }
+.release-card-bottom time { flex: 0 0 auto; color: #c7cbc4; text-align: right; }
+
+@media (max-width: 760px) {
+  .latest-grid { grid-template-columns: 1fr; gap: 12px; }
+  .latest-card { min-height: 0; grid-template-columns: 1fr; }
+  .latest-thumb { height: auto; aspect-ratio: 16 / 9; }
+  .release-card { min-height: 250px; padding: 19px; }
+  .release-day { font-size: 76px; }
+  .release-card-bottom h3 { font-size: 22px; }
+}
+
+@media (max-width: 410px) {
+  .release-card-top { align-items: flex-start; flex-direction: column; gap: 9px; }
+  .release-date { margin: 13px 0; }
+  .release-day { font-size: 68px; }
+  .release-card-bottom { align-items: flex-start; flex-direction: column; }
+  .release-card-bottom h3 { font-size: 21px; }
+  .release-card-bottom time { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .release-card, .release-dot { animation: none !important; }
+}
