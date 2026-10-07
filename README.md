@@ -1,16 +1,16 @@
 # yrred creator profile
 
-Social links are shown in this order: TikTok, YouTube, Instagram, and Discord. YouTube stats are live. TikTok, Instagram, and Discord figures are editable in `app.js`.
+Social links are shown in this order: TikTok, YouTube, Instagram, and Discord. YouTube stats are refreshed every six hours by GitHub Actions. TikTok, Instagram, and Discord figures are editable in app.js.
 
 ## Connect YouTube stats
 
-1. Revoke the API key that was pasted into chat. Create a new key in Google Cloud and restrict it to the YouTube Data API v3. [MISALNYA KENA BOCOR API NYA]
-2. Open `.env` in this folder and replace `paste_your_new_key_here` with your new key. Do not paste the key into `app.js`, `index.html`, or chat. `.env` is excluded from Git and blocked by the local web server.
-3. Stop the server with Ctrl+C, then run `python server.py` from this folder.
-4. Open `http://127.0.0.1:8000`.
+1. Revoke any API key that was uploaded to the public repository. Create a new key in Google Cloud and restrict it to the YouTube Data API v3.
+2. In GitHub, open Settings > Secrets and variables > Actions and add a repository secret named YOUTUBE_API_KEY with the new key. Never commit the key or paste it into chat.
+3. Run the Refresh YouTube stats workflow once from the Actions tab. It will refresh the snapshot every six hours afterward.
+4. GitHub Pages serves youtube-stats.json with the site. The page shows the snapshot update time; it does not call the YouTube API from the browser.
 
-YouTube subscriber count, total views, video count, and the latest public upload are requested from the YouTube Data API. The server caches results for five minutes, so updates are periodic rather than instant. If the API key is missing or invalid, the page marks YouTube data as unavailable.
+The workflow uses the API key only on GitHub's servers and commits the public channel stats snapshot to the Pages branch. If the key is missing or invalid, the workflow fails and the page keeps the last successful snapshot.
 
 ## Edit social stats
 
-Change the values under each platform in the `channels` array in `app.js`. Only the YouTube row is replaced by live API results.
+Change values under each platform in the channels array in app.js. Only the YouTube row is replaced by the generated snapshot.
