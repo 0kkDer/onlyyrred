@@ -196,9 +196,9 @@ body {
 .topbar-edition span { margin-left: 10px; color: var(--ink); }
 
 .intro {
-  grid-template-columns: minmax(0, 1.05fr) minmax(330px, .95fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(330px, .8fr);
   min-height: 590px;
-  gap: 58px;
+  gap: 42px;
   padding: 64px 0 58px;
 }
 .intro-copy { position: relative; z-index: 2; padding: 0; }
@@ -206,7 +206,7 @@ body {
 .eyebrow-line { width: 30px; height: 2px; background: var(--coral); }
 .creator-status { display: flex; align-items: center; gap: 8px; margin: 30px 0 0; color: var(--blue); font: 10px var(--mono); }
 .creator-status .live-dot { width: 8px; height: 8px; }
-h1 { max-width: 720px; margin: 14px 0 20px; font-family: var(--display); font-size: 136px; font-weight: 800; line-height: .82; letter-spacing: 0; }
+h1 { max-width: 720px; margin: 14px 0 20px; font-family: var(--display); font-size: 100px; font-weight: 800; line-height: .82; letter-spacing: 0; }
 h1 > span { color: var(--blue); }
 .period { color: var(--coral); }
 .bio { max-width: 450px; margin: 25px 0 0; color: #414641; font-size: 19px; line-height: 1.48; }
@@ -373,4 +373,9 @@ h2 span { color: var(--blue); }
 
 @media (prefers-reduced-motion: reduce) {
   .creator-status .live-dot, .signal-period.is-live::before { animation: none; }
+}
+
+@media (min-width: 761px) and (max-width: 960px) {
+  .intro { grid-template-columns: minmax(0, 1fr) minmax(280px, .85fr); gap: 28px; }
+  h1 { font-size: 82px; }
 }
