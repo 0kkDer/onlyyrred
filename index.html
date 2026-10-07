@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=editorial-4">
+  <link rel="stylesheet" href="styles.css?v=editorial-5">
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -63,13 +63,27 @@
         </div>
       </section>
 
-      <section class="latest-section" id="latest-section" aria-labelledby="latest-title" hidden>
+      <section class="latest-section" id="latest-section" aria-labelledby="latest-title">
         <div class="latest-heading"><p class="eyebrow"><span class="eyebrow-line"></span> RECENTLY ON YOUTUBE</p><h2 id="latest-title">Latest upload<span>.</span></h2></div>
         <div class="latest-grid">
           <a class="latest-card" id="latest-upload-card" target="_blank" rel="noopener noreferrer" hidden>
             <div class="latest-thumb"><img id="latest-upload-image" alt="" loading="lazy"><span>PLAY VIDEO <b aria-hidden="true">↗</b></span></div>
             <div class="latest-copy"><div class="latest-meta"><span>NEW ON YOUTUBE</span><time id="latest-upload-date"></time></div><h3 id="latest-upload-title"></h3><span class="latest-open">OPEN VIDEO <span aria-hidden="true">↗</span></span></div>
           </a>
+          <article class="release-card" aria-labelledby="release-title">
+            <div class="release-card-top">
+              <span class="release-kicker">UP NEXT / MUSIC</span>
+              <span class="release-status"><span class="release-dot" aria-hidden="true"></span> IN THE WORKS</span>
+            </div>
+            <div class="release-date" aria-label="December 5">
+              <span class="release-day">05</span>
+              <span class="release-month">DEC</span>
+            </div>
+            <div class="release-card-bottom">
+              <h3 id="release-title">New music<br>on the way.</h3>
+              <time datetime="2026-12-05">DECEMBER 05, 2026</time>
+            </div>
+          </article>
         </div>
       </section>
 
