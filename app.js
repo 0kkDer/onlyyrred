@@ -105,7 +105,7 @@ function setCreatorAvatar(url) {
     avatar.classList.add('has-image');
   };
   image.onerror = () => avatar.classList.remove('has-image');
-  image.src = url;
+  image.src = url; document.querySelector('link[rel="icon"]').href = url;
 }
 
 function showLatestCard(platform, content) {
