@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import time
 from datetime import datetime, timezone
 from functools import partial
@@ -161,7 +162,6 @@ class CreatorHandler(SimpleHTTPRequestHandler):
         _cache["expires_at"] = now + CACHE_TTL_SECONDS
         self.send_json(200, data)
 
-
     def send_json(self, status: int, payload: dict) -> None:
         body = json.dumps(payload).encode("utf-8")
         self.send_response(status)
@@ -174,6 +174,14 @@ class CreatorHandler(SimpleHTTPRequestHandler):
 
 def main() -> None:
     load_local_env()
+    if len(sys.argv) > 1 and sys.argv[1] == "--write-snapshot":
+        snapshot = fetch_youtube_stats()
+        (ROOT / "youtube-stats.json").write_text(
+            json.dumps(snapshot, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        return
+
     handler = partial(CreatorHandler, directory=str(ROOT))
     with ThreadingHTTPServer((HOST, PORT), handler) as server:
         print(f"yrred profile running at http://{HOST}:{PORT}")
