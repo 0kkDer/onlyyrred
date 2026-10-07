@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2e9">
+  <meta name="description" content="Your creator stats and social links, all in one place.">
+  <title>yrred</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="yrred home"><span class="wordmark-icon" aria-hidden="true">y.</span> yrred</a>
+      <span class="topbar-note"><span class="live-dot" aria-hidden="true"></span> CREATOR PROFILE <span class="topbar-divider">/</span> 01</span>
+      <a class="topbar-link" href="#stats">stats <span aria-hidden="true">↘</span></a>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="creator-name">
+        <div class="intro-copy">
+          <div class="creator-header">
+            <p class="eyebrow"><span class="eyebrow-line"></span> DIGITAL CREATOR <span class="demo-tag" id="stats-state">YOUTUBE DATA</span></p>
+            <div class="creator-avatar" id="creator-avatar" aria-hidden="true"><span>y.</span><img id="creator-avatar-image" alt=""></div>
+          </div>
+          <h1 id="creator-name">yrred<span class="period">.</span></h1>
+          <p class="bio" id="creator-bio">Videos, stories, and whatever I'm into. Glad you're here.</p>
+          <div class="intro-meta"><span id="creator-handle">@yourhandle</span><span class="meta-divider"></span><span id="creator-location">Jakarta, Indonesia</span></div>
+          <a class="contact-link" id="contact-link" href="mailto:hello@example.com">Let's talk <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <aside class="signal-panel" aria-label="YouTube channel statistics">
+          <div class="signal-top"><span>YOUTUBE SUBSCRIBERS</span><span class="signal-period" id="signal-period">CHECKING</span></div>
+          <div class="signal-number" id="youtube-subscriber-count">641</div>
+          <div class="signal-caption">Live public channel snapshot</div>
+          <div class="youtube-summary">
+            <div><strong id="youtube-total-views">1.3K</strong><span>TOTAL VIEWS</span></div>
+            <div><strong id="youtube-video-count">13</strong><span>PUBLIC VIDEOS</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="channels" id="stats" aria-labelledby="channels-title">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> AROUND THE WEB</p><h2 id="channels-title">Find me <span>here.</span></h2></div>
+          <p class="section-aside">Pick a platform to explore<br>my latest content.</p>
+        </div>
+        <div class="channel-list" id="channel-list"></div>
+        <section class="latest-section" id="latest-section" aria-labelledby="latest-title" hidden>
+          <div class="latest-heading"><p class="eyebrow"><span class="eyebrow-line"></span> YOUTUBE</p><h3 id="latest-title">Latest upload<span>.</span></h3></div>
+          <div class="latest-grid">
+            <a class="latest-card" id="latest-upload-card" target="_blank" rel="noopener noreferrer" hidden>
+              <div class="latest-thumb"><img id="latest-upload-image" alt="" loading="lazy"><span>YOUTUBE</span></div>
+              <div class="latest-meta"><span>NEW ON YOUTUBE</span><time id="latest-upload-date"></time></div>
+              <h4 id="latest-upload-title"></h4>
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <a class="wordmark footer-mark" href="#top"><span class="wordmark-icon" aria-hidden="true">y.</span> yrred</a>
+        <span class="footer-center">ALL MY LINKS, ONE PLACE.</span>
+        <a class="back-top" href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
